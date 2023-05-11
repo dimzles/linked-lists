@@ -37,4 +37,13 @@ class LinkedList {
     //set nextNode of current listHead to point to prev listHead
     this.listHead.nextNode = originalNode;
   }
+
+  size() {
+    let head = this.listHead;
+    let counter = 0;
+    while (head.nextNode !== null) {
+      counter++;
+    }
+    return counter;
+  }
 }
