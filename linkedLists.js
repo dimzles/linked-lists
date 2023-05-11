@@ -60,4 +60,14 @@ class LinkedList {
 
     return tail;
   }
+
+  at(index) {
+    let currentNode = this.listHead;
+
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode.nextNode;
+    }
+
+    return currentNode;
+  }
 }
