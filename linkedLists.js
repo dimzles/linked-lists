@@ -22,8 +22,19 @@ class LinkedList {
       while (listTail.nextNode !== null) {
         listTail = listTail.nextNode;
       }
-      //when tail = null, tail.nextNode = newNode
+      //when tail.nextNode = null, tail.nextNode = newNode
       listTail.nextNode = newNode;
     }
+  }
+
+  prepend(value) {
+    //create var to hold current listHead if it exists
+    let originalNode = null;
+    //if listHead exists, store it in var
+    if (this.listHead !== null) originalNode = this.listHead;
+    //replace listHead with new Node
+    this.listHead = new Node(value);
+    //set nextNode of current listHead to point to prev listHead
+    this.listHead.nextNode = originalNode;
   }
 }
