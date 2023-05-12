@@ -40,9 +40,11 @@ export default class LinkedList {
 
   size() {
     let head = this.listHead;
-    let counter = 0;
+    if (!head) return 0;
+    let counter = 1;
     while (head.nextNode !== null) {
       counter++;
+      head = head.nextNode;
     }
     return counter;
   }
