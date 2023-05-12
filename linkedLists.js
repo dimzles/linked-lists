@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class LinkedList {
+export default class LinkedList {
   constructor() {
     this.listHead = null;
   }
@@ -69,5 +69,17 @@ class LinkedList {
     }
 
     return currentNode;
+  }
+
+  pop() {
+    let prevNode = null;
+    let currentNode = this.listHead;
+
+    while (currentNode.nextNode !== null) {
+      prevNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+
+    prevNode.nextNode = null;
   }
 }
