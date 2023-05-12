@@ -120,4 +120,22 @@ export default class LinkedList {
 
     return (finalString += "null");
   }
+
+  insertAt(value, index) {
+    let newNode = new Node(value);
+    let currentNode = this.listHead;
+    let prevNode;
+
+    if (index === 0) this.prepend(value);
+    else {
+      for (let i = 0; i < index; i++) {
+        if (currentNode === null) return "Please enter a valid index";
+        prevNode = currentNode;
+        currentNode = currentNode.nextNode;
+      }
+
+      prevNode.nextNode = newNode;
+      newNode.nextNode = currentNode;
+    }
+  }
 }
