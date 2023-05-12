@@ -1,3 +1,3 @@
 # linked-lists
 
-A JavaScript implementation of a linked list.
+A JavaScript implementation of a singly linked list.
