@@ -138,4 +138,19 @@ export default class LinkedList {
       newNode.nextNode = currentNode;
     }
   }
+
+  removeAt(index) {
+    let currentNode = this.listHead;
+    let prevNode;
+
+    if (index === 0) this.listHead = currentNode.nextNode;
+
+    for (let i = 0; i < index; i++) {
+      if (currentNode === null) return "Please enter a valid index";
+      prevNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+
+    prevNode.nextNode = currentNode.nextNode;
+  }
 }
