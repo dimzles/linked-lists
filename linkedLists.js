@@ -93,4 +93,17 @@ export default class LinkedList {
 
     return true;
   }
+
+  find(value) {
+    let currentNode = this.listHead;
+    let counter = 0;
+
+    while (currentNode.value !== value) {
+      if (currentNode.nextNode === null || value < 0) return null;
+      currentNode = currentNode.nextNode;
+      counter++;
+    }
+
+    return counter;
+  }
 }
